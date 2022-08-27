@@ -176,7 +176,7 @@ body {
   transition: all 200ms linear;
 }
 
-.pricing {
+.pricing, .focus {
   display: none;
   position: absolute;
   top: -2.75em;

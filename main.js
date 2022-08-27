@@ -18,18 +18,29 @@ readTextFile("data.json", function(text){
 
 function initializeButtonsBars(data) {
     const buttons = document.querySelectorAll(".chart-pole");
-    const prices = document.querySelector(".daily-expenses").getElementsByTagName("p");
+    const prices = document.querySelector(".daily-expenses").querySelectorAll(".pricing");
+    const pricesFocus = document.querySelector(".daily-expenses").querySelectorAll(".focus");
 
     for (let index = 0; index < buttons.length; index++) {
         buttons[index].style.height = (data[index]['amount'] / 8) + "em" ;
         prices[index].innerHTML = "$" + data[index]['amount'];
+        pricesFocus[index].innerHTML = "$" + data[index]['amount'];
 
-        buttons[index].addEventListener("focusin", () => {
+        buttons[index].addEventListener("mouseover", () => {
             prices[index].style.display = "block";
         }); 
 
-        buttons[index].addEventListener("focusout", () => {
+        buttons[index].addEventListener("mouseout", () => {
             prices[index].style.display = "none";
         }); 
+
+        buttons[index].addEventListener("focusin", () => {
+            pricesFocus[index].style.display = "block";
+        }); 
+
+        buttons[index].addEventListener("focusout", () => {
+            pricesFocus[index].style.display = "none";
+        }); 
+
     }
 }
