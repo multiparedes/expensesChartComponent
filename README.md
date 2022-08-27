@@ -70,6 +70,11 @@ All in all a good challenge that introduced me into .JSON files and the ability 
 
 PD: If anynone knows how to fix the hover and focus problem contact with me. :)
 
+PD: 
+
+After thinking about it I find a solution, the idea I had was having two price tags on the same position and active one with the mouseover-mouseout events and the other with the focusin-focusout event. With this I can trigger in an independent way and have both events working.
+
+If anyone had found a better solution could leave me a message on FrontendMentor please ? Thanks!
 
 ## Author
 
